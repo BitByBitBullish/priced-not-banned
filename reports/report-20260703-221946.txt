@@ -1,0 +1,117 @@
+# WITNESS STUDY  (387174 inputs, eras=['A', 'B', 'C', 'C_heavy'])
+# legend: '~' after a percentile = under-supported tail (<10 obs beyond it); value is the nearest-rank order statistic (= sample max only when nothing lies beyond it), not a trustworthy quantile.
+# 50581 inputs are from inscription-enrichment (C_heavy) blocks: EXCLUDED from combined/representative tables, used only in the outlier hunt.
+# CAVEAT: inputs are CLUSTER-sampled by block (all inputs of each drawn block are taken), so extreme-tail cells may be supported by only a few independent blocks/entities, NOT by n independent inputs. See per-bucket 'tail support' block below.
+
+== ERA A  (62430 inputs) ==
+  lightning_like           n=      51  p50=   220  p90=   220~  p99=   1413~  p99.9=    1413~  p99.99=     1413~  max=     1413
+  p2wpkh_singlesig         n=   46759  p50=   104  p90=    105  p99=     105  p99.9=      105  p99.99=      105~  max=      105
+  p2wsh_multisig           n=   15519  p50=   247  p90=    248  p99=     280  p99.9=      355  p99.99=      806~  max=      807
+  p2wsh_other              n=     101  p50=   305  p90=    355  p99=    356~  p99.9=     356~  p99.99=      356~  max=      356
+  [BUCKET monetary]         n=   62430  p50=   104  p90=    248  p99=     249  p99.9=      354  p99.99=      421~  max=     1413
+
+== ERA B  (97882 inputs) ==
+  lightning_like           n=     249  p50=   220  p90=    239  p99=   1413~  p99.9=    1417~  p99.99=     1417~  max=     1417
+  p2tr_keypath             n=     341  p50=    65  p90=     65  p99=     65~  p99.9=      65~  p99.99=       65~  max=       65
+  p2wpkh_singlesig         n=   75985  p50=   104  p90=    105  p99=     105  p99.9=      105  p99.99=      105~  max=      105
+  p2wsh_multisig           n=   20933  p50=   247  p90=    248  p99=     353  p99.9=      388  p99.99=      599~  max=      600
+  p2wsh_other              n=     374  p50=   305  p90=    306  p99=    356~  p99.9=     356~  p99.99=      356~  max=      356
+  [BUCKET monetary]         n=   97882  p50=   104  p90=    247  p99=     249  p99.9=      355  p99.99=      598~  max=     1417
+
+== ERA C  (176281 inputs) ==
+  lightning_like           n=     596  p50=   220  p90=    238  p99=   1415~  p99.9=    1416~  p99.99=     1416~  max=     1416
+  p2tr_keypath             n=   30210  p50=    64  p90=     65  p99=      65  p99.9=       65  p99.99=       65~  max=       65
+  p2tr_scriptpath_other    n=     460  p50=   210  p90=    273  p99=    661~  p99.9=   15260~  p99.99=    15260~  max=    15260
+  p2wpkh_singlesig         n=  116400  p50=   104  p90=    105  p99=     105  p99.9=      105  p99.99=       105  max=      105
+  p2wsh_multisig           n=   13460  p50=   249  p90=    354  p99=     355  p99.9=      387  p99.99=      600~  max=      600
+  p2wsh_other              n=     618  p50=   305  p90=    306  p99=    336~  p99.9=    1686~  p99.99=     1686~  max=     1686
+  taproot_inscription      n=   14537  p50=   220  p90=    270  p99=    9149  p99.9=    59922  p99.99=    99874~  max=   105992
+  [BUCKET monetary]         n=  161744  p50=   104  p90=    105  p99=     354  p99.9=      355  p99.99=      1414  max=    15260
+  [BUCKET data    ]         n=   14537  p50=   220  p90=    270  p99=    9149  p99.9=    59922  p99.99=    99874~  max=   105992
+
+== ERA C_heavy  (50581 inputs) ==
+  lightning_like           n=     300  p50=   220  p90=    220  p99=    239~  p99.9=     280~  p99.99=      280~  max=      280
+  p2tr_keypath             n=    3237  p50=    64  p90=     65  p99=      65  p99.9=      65~  p99.99=       65~  max=       65
+  p2tr_scriptpath_other    n=     106  p50=   131  p90=    468  p99=  16641~  p99.9=   85727~  p99.99=    85727~  max=    85727
+  p2wpkh_singlesig         n=   26601  p50=   104  p90=    105  p99=     105  p99.9=      105  p99.99=      105~  max=      105
+  p2wsh_multisig           n=    2870  p50=   214  p90=    248  p99=     354  p99.9=     355~  p99.99=      598~  max=      598
+  p2wsh_other              n=     255  p50=   305  p90=    336  p99=    356~  p99.9=     356~  p99.99=      356~  max=      356
+  taproot_inscription      n=   17212  p50=   225  p90=    244  p99=    1865  p99.9=   131094  p99.99=   207633~  max=   212146
+  [BUCKET monetary]         n=   33369  p50=   104  p90=    131  p99=     282  p99.9=      355  p99.99=      712~  max=    85727
+  [BUCKET data    ]         n=   17212  p50=   225  p90=    244  p99=    1865  p99.9=   131094  p99.99=   207633~  max=   212146
+
+== ALL ERAS COMBINED (excl. C_heavy enrichment; 'monetary' bucket INCLUDES contract classes p2wsh_other + p2tr_scriptpath_other) ==
+  [BUCKET monetary]         n=  322056  p50=   104  p90=    247  p99=     354  p99.9=      355  p99.99=      1412  max=    15260
+  [BUCKET data    ]         n=   14537  p50=   220  p90=    270  p99=    9149  p99.9=    59922  p99.99=    99874~  max=   105992
+  [BUCKET mon-core]         n=  320503  p50=   104  p90=    247  p99=     354  p99.9=      355  p99.99=      1411  max=     1417
+  -- same buckets, SERIALIZED witness bytes (on-wire, incl. length prefixes) --
+  [BUCKET monetary ser]     n=  322056  p50=   107  p90=    252  p99=     360  p99.9=      361  p99.99=      1428  max=    15266
+  [BUCKET data     ser]     n=   14537  p50=   224  p90=    274  p99=    9155  p99.9=    59928  p99.99=    99882~  max=   106000
+  -- tail support: distinct blocks contributing obs at/above the p99.99 cell --
+     monetary  p99.99>=1412: 36 tail obs across 9 distinct block(s)  <-- entity/cluster-driven, do NOT publish as population p99.99
+     mon-core  p99.99>=1411: 33 tail obs across 5 distinct block(s)  <-- entity/cluster-driven, do NOT publish as population p99.99
+     data      p99.99>=99874: 2 tail obs across 2 distinct block(s)  <-- entity/cluster-driven, do NOT publish as population p99.99
+
+== MAX MONETARY WITNESS == 85727 bytes  class=p2tr_scriptpath_other m_of_n=None annex=False h=786236 tx=90b48953a7da7b97fd2c0e5bab200c016431aba0830e48c2a55769da0ee37c3a
+  top-20 largest monetary inputs:
+       85727B  p2tr_scriptpath_other  m_of_n=None   annex=False h=786236 90b48953a7da7b97fd2c..:0
+       16641B  p2tr_scriptpath_other  m_of_n=None   annex=False h=783006 28338349d1556a2ff89d..:0
+       15260B  p2tr_scriptpath_other  m_of_n=None   annex=False h=932525 f5908ecaef9409205f05..:0
+        4995B  p2tr_scriptpath_other  m_of_n=None   annex=False h=820106 702d85d15774d7b3f148..:0
+        1856B  p2tr_scriptpath_other  m_of_n=None   annex=False h=789549 cd96715f0d241ca97399..:0
+        1686B  p2wsh_other            m_of_n=None   annex=False h=888520 9045d22abd52983bd5cf..:1
+        1652B  p2wsh_other            m_of_n=None   annex=False h=888520 9045d22abd52983bd5cf..:0
+        1542B  p2tr_scriptpath_other  m_of_n=None   annex=False h=878958 9ebdd5f0c56e50a80a55..:0
+        1417B  lightning_like         m_of_n=None   annex=False h=765618 e9d5e74bd31b96351a52..:0
+        1416B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:7
+        1416B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:14
+        1415B  lightning_like         m_of_n=None   annex=False h=721234 bab620b3fa6d345b96f7..:0
+        1415B  lightning_like         m_of_n=None   annex=False h=894752 62c3dc8669b7dbcc83b5..:1
+        1415B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:2
+        1415B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:10
+        1415B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:13
+        1415B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:15
+        1415B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:16
+        1414B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:1
+        1414B  lightning_like         m_of_n=None   annex=False h=894752 c82839c140aa026f677d..:11
+
+== SUBSIDY TABLE (share of total witness BYTES) ==
+  ERA A: total_witness_bytes=8507267
+     bucket monetary       8507267  100.00%
+       - p2wpkh_singlesig              4877386   57.33%
+       - p2wsh_multisig                3594789   42.26%
+       - p2wsh_other                     24366    0.29%
+       - lightning_like                  10726    0.13%
+
+  ERA B: total_witness_bytes=12940562
+     bucket monetary      12940562  100.00%
+       - p2wpkh_singlesig              7922267   61.22%
+       - p2wsh_multisig                4830981   37.33%
+       - p2wsh_other                    110100    0.85%
+       - lightning_like                  55081    0.43%
+       - p2tr_keypath                    22133    0.17%
+
+  ERA C: total_witness_bytes=26202213
+     bucket monetary      18319491   69.92%
+     bucket data           7882722   30.08%
+       - p2wpkh_singlesig             12144751   46.35%
+       - taproot_inscription           7882722   30.08%
+       - p2wsh_multisig                3767428   14.38%
+       - p2tr_keypath                  1937202    7.39%
+       - p2wsh_other                    187102    0.71%
+       - lightning_like                 167693    0.64%
+       - p2tr_scriptpath_other          115315    0.44%
+
+  ERA C_heavy: total_witness_bytes=13987940
+     bucket monetary       3905902   27.92%
+     bucket data          10082038   72.08%
+       - taproot_inscription          10082038   72.08%
+       - p2wpkh_singlesig              2774721   19.84%
+       - p2wsh_multisig                 658411    4.71%
+       - p2tr_keypath                   208215    1.49%
+       - p2tr_scriptpath_other          122172    0.87%
+       - p2wsh_other                     78049    0.56%
+       - lightning_like                  64334    0.46%
+
+== ANNEX == 0 annex-present inputs (representative; +0 in C_heavy enrichment)
+== NESTED SEGWIT == 135990 P2SH-wrapped SegWit inputs (representative; +6705 in C_heavy) (counted in monetary under their native class; witness bytes identical to native)

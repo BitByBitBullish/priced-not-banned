@@ -1,0 +1,54 @@
+# WITNESS RE-VALIDATION (independent non-cluster draw) — seed=2013, generated 2026-07-04
+# Method: 751 DISTINCT random blocks across SegWit era [481824,956647], one 25-tx page each (non-cluster).
+# Classification reused verbatim from witness_study.py. Answers: does any legit monetary witness exceed 1500B?
+
+===== RE-VALIDATION ANALYSIS (53379 inputs, 51906 monetary) =====
+distinct blocks sampled: 751
+
+-- per monetary class (witness_bytes) --
+  lightning_like             n=30      blocks=24    p50=202   p90=221    p99=238    p99.9=238     p99.99=238     max=238
+  p2tr_keypath               n=1841    blocks=189   p50=64    p90=65     p99=65     p99.9=65      p99.99=65      max=65
+  p2tr_scriptpath_other      n=69      blocks=19    p50=167   p90=655    p99=696    p99.9=696     p99.99=696     max=696
+  p2wpkh_singlesig           n=45028   blocks=696   p50=104   p90=105    p99=105    p99.9=105     p99.99=105     max=105
+  p2wsh_multisig             n=4820    blocks=316   p50=247   p90=249    p99=249    p99.9=354     p99.99=458     max=458
+  p2wsh_other                n=118     blocks=37    p50=305   p90=305    p99=336    p99.9=336     p99.99=336     max=336
+
+-- buckets --
+  monetary (all)             n=51906   blocks=729   p50=104   p90=105    p99=249    p99.9=305     p99.99=655     max=696
+  mon-core (excl contract)   n=51719   blocks=727   p50=104   p90=105    p99=249    p99.9=249     p99.99=353     max=458
+
+-- OVER-CAP monetary inputs (the whole question) --
+  > 1500B : 0 monetary inputs across 0 blocks (0 mon-core across 0 blocks)
+  > 2000B : 0 monetary inputs across 0 blocks (0 mon-core across 0 blocks)
+  > 2500B : 0 monetary inputs across 0 blocks (0 mon-core across 0 blocks)
+
+-- top-25 monetary by witness_bytes --
+         696B  p2tr_scriptpath_other  m_of_n=None h=942180 fee40451b25d9b76..:0
+         694B  p2tr_scriptpath_other  m_of_n=None h=942180 4317e84c71fdb90d..:0
+         694B  p2tr_scriptpath_other  m_of_n=None h=942180 676b745496b0d4eb..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 3270f84b3b178158..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 69971db459c669ba..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 81873478285b1fdd..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 cbb2e936b07d8944..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 39c976fc99d639e3..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 23d55f93d9490c25..:0
+         655B  p2tr_scriptpath_other  m_of_n=None h=942180 1df3ee04b2436284..:0
+         458B  p2wsh_multisig         m_of_n=4of5 h=618284 87961bdde32cb0d4..:0
+         387B  p2wsh_multisig         m_of_n=3of5 h=827189 20907b1ddcbf9136..:0
+         355B  p2wsh_multisig         m_of_n=3of4 h=788399 1fdab595f7b9348f..:0
+         354B  p2wsh_multisig         m_of_n=3of4 h=824266 7049b914ea481d56..:0
+         354B  p2wsh_multisig         m_of_n=3of4 h=724129 ddb4c8fccfb6f8e4..:0
+         353B  p2wsh_multisig         m_of_n=3of4 h=788399 a8f415caedaa40ad..:0
+         353B  p2wsh_multisig         m_of_n=3of4 h=788399 55938dde74785cf2..:0
+         353B  p2wsh_multisig         m_of_n=3of4 h=788399 2d371c117c621001..:0
+         353B  p2wsh_multisig         m_of_n=3of4 h=824266 7049b914ea481d56..:1
+         336B  p2wsh_other            m_of_n=None h=883359 8a7ac9da86b119b2..:0
+         336B  p2wsh_other            m_of_n=None h=781085 d01033fa3e98bff5..:0
+         336B  p2wsh_other            m_of_n=None h=879475 d8068b21c6087c05..:0
+         336B  p2wsh_other            m_of_n=None h=934264 04de3fa835909d79..:0
+         336B  p2wsh_other            m_of_n=None h=794115 668a293cf419a52e..:0
+         336B  p2wsh_other            m_of_n=None h=744811 1bd809b4a88f7278..:0
+
+-- lightning_like: 30 inputs across 24 blocks; >=1400B: 0 inputs across 0 DISTINCT blocks --
+-- p2wsh_multisig: n=4820, max=458B (m_of_n=4of5, h=618284); count >800B: 0 --
+===== END ANALYSIS =====
