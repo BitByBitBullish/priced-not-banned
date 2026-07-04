@@ -2,6 +2,8 @@
 
 A two-part proposal for Bitcoin's arbitrary-data fight: **cap the SegWit witness discount at the first 2,000 bytes per input** (money keeps its discount, bulk data past the cap pays full price), and **pair it with a discardable data lane** so data that only needs a commitment lives somewhere nodes never have to store. Nothing becomes invalid, no coin can be frozen, and no rule ever reads a byte's meaning — the line is drawn on *size and price only*. The threshold is measured, not asserted: across 439,000+ randomly sampled real transaction inputs, not one genuine monetary spend in the independent draw exceeds 2,000 bytes.
 
+**Announcement:** https://x.com/bitbybitbullish/status/2073465112820682934
+
 ## Read this first
 - **[witness-cap-proposal.md](witness-cap-proposal.md)** — the full, fact-checked proposal (the technical paper).
 - **[EXPLAINER.md](EXPLAINER.md)** — the plain-language version ("the fight in one minute").
